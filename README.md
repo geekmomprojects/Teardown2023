@@ -23,7 +23,7 @@ connect, try pressing the "Stop/Restart" button on Thonny's toolbar.
 
 
 ### Download Workshop Code
-Download this repositor, and unzip it. Copy the contents of the "lib" folder over to the controller. If you are using the LilyGo T-OI board, the easiest way to do
+Download this repositor, and unzip it. Copy the contents of the "lib" folder over to the controller. Also copy over the files "code.py" and "settings.toml." If you are using the LilyGo T-OI board, the easiest way to do
 this is with the Thonny IDE. On the left side of Thonny are two panes showing the directory structure on the computer and on the microcontroller. Navigate to the
 source folder in the computer pane and the destination folder in the microcontroller pane. In the computer pane, highlight the files you'd like to copy
 to the controller, click the three small horiontal bars to open the menu and select the option to upload the highlighted files to the directory that
@@ -34,7 +34,7 @@ is open in the controller pane.
 
 If you receive a lanyard kit to use at the workshop, [instructions for assembly are here](/lanyard/README.md)
 
-###Attaching the Microphone
+### Attaching the Microphone
 The wires on the microphone attach to the 3.3V (red), GND (green) and IO4 (yellow) pins in the female header on the T-OI board.
 Unfortunately, the hookup wire I used is a bit thin, so you may have to tape the wires in place to get them to stay.
 ![Microphone wires attached to the T-OI Headers](./images/MicAttached.jpg)
