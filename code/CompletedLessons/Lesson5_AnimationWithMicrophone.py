@@ -55,11 +55,6 @@ if __name__ == "__main__":
     mic = AnalogMIC(mic_pin, noise=13, nsamples = 120)
     
     vu_meter = VU_meter(pixels, mic, speed=0.01)
-    last_print = 0
     while True:
         mic.record_sample()
         vu_meter.animate()
-        # Uncomment the if statement below to print the average microphone volume
-        #if time.monotonic() - last_print > 0.5:
-        #   print(mic.get_volume())
-        #    last_print = time.monotonic()

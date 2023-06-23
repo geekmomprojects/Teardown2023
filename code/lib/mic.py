@@ -42,3 +42,21 @@ class AnalogMIC():
     # Return the average sound level
     def get_volume(self):
         return max(mean(self.samples) - self.noise, 0)
+
+
+if __name__ == "__main__":
+    import board
+    import time
+    import os
+    
+    # Mic pin attached here
+    mic_pin = eval("board." + os.getenv('MIC_ADC_PIN'))
+    mic = AnalogMIC(mic_pin, noise=13, nsamples = 120)
+
+    last_print = time.monotonic()
+    while True:
+        mic.record_sample()
+        if time.monotonic() - last_print > 0.5:
+            print(mic.get_volume())
+            last_print = time.monotonic()
+
