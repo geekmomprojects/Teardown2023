@@ -14,7 +14,7 @@ If you prefer not to purchase a lanyard kit, you may bring your own microcontrol
 
 ### Lanyard Kit
 
-If you purchase an LED lanyard kit ($20) to use at the workshop, [instructions for assembly are here](/lanyard/README.md)
+If you receive a lanyard kit to use at the workshop, [instructions for assembly are here](/lanyard/README.md)
 
 ## Resources
 

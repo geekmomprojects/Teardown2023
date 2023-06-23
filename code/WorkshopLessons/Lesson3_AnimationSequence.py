@@ -24,13 +24,4 @@ blink = Blink(pixels, speed = 0.5, color=(255,128,0))
 comet = Comet(pixels, speed=0.05, color=(0,255,0), tail_length=10, bounce=True)
 chase = Chase(pixels, speed=0.1, size=3, spacing=6, color=(0,128,128))
 
-# Create the animation sequence, which automatically controls swithcing
-# between animations at the pre-specified interval, advance_interval
-animations = AnimationSequence(
-    comet, blink, chase, advance_interval=5, auto_clear=True, random_order=True
-)
-
-while True:
-    # Calling animate on the AnimationSequence object will call the
-    # animate() function on the current animation
-    animations.animate()
+##### TODO: Create an AnimationSequence object to display animations in sequence

@@ -1,7 +1,14 @@
+# Demo code.py for Teardown 2023 workshop: LED Animations with CircuitPython
+# Lesson 6 integrates an MQTT feed (WiFi access point required) which gets 
+# data from the Cheerlights site to set the default colors of the animations
+# displayed int the AnimationSequence.
+
 import neopixel
 import board
 import time
 # For more info about Adafruit LED animations, see https://learn.adafruit.com/circuitpython-led-animations
+
+# Import some animations
 from adafruit_led_animation.animation.pulse import Pulse
 from adafruit_led_animation.animation.comet import Comet
 from adafruit_led_animation.animation.chase import Chase
@@ -38,14 +45,12 @@ mqtt_topic = "cheerlights"
 
 ### Code ###
 
-
 # Define callback methods which are called when events occur
 # TBD - Credit this code to Adafruit MQTT demo
 def connected(client, userdata, flags, rc):
     # This function will be called when the client is connected
     # successfully to the broker.
     print("Connected to Cheerlights!")
-
 
 def disconnected(client, userdata, rc):
     # This method is called when the client is disconnected

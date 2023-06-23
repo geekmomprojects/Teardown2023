@@ -6,6 +6,9 @@ from mic import AnalogMIC                              # Class to read and avera
 def clamp(x, minv, maxv):
     return max(minv, min(x, maxv))
 
+# The VU_meter animation fills the pixels symmetrically in columns on both sides of the
+# lanyard string. The height of the columns reflect the average measured noise
+# intensity. The microphone must be attached to the microcontroller.
 class VU_meter(Animation):
     def __init__(
         self,
@@ -22,13 +25,9 @@ class VU_meter(Animation):
          
     # Override the led_animation class draw() function to display the vu_meter animation 
     def draw(self):
-        npix = self.pixel_object.n
-        self.pixel_object.fill((0,0,0))
-        height = clamp(int(self.mic.get_volume()*self.scale_vol), 0, npix)//2  #might need to scale mic values
-        self.pixel_object[0:height] = [self.color]*height
-        self.pixel_object[npix-height:npix] = [self.color]*height
+    ##### TODO: Fill in the draw function
         
-     #TBD - introduce rolling averages, adjustable gain...
+    # future improvements - introduce rolling averages, adjustable gain...
         
 # For testing
 if __name__ == "__main__":
@@ -44,17 +43,10 @@ if __name__ == "__main__":
     pixel_num = 20
     # Create the pixel array
     pixels = neopixel.NeoPixel(pixel_pin, pixel_num, brightness=0.5, auto_write=False)
+ 
+    ##### TODO: Create a microphone object to read from the ADC pin receiving microphone input
     
-    # Mic pin attached here
-    mic_pin = board.IO4
-    mic = AnalogMIC(mic_pin, noise=13, nsamples = 120)
-    
-    vu_meter = VU_meter(pixels, mic, speed=0.01)
-    last_print = 0
+    ##### TODO: Create a vu_meter animation object that takes the microphone object as an argument
+
     while True:
-        mic.record_sample()
-        vu_meter.animate()
-        # Uncomment the if statement below to print the average microphone volume
-        #if time.monotonic() - last_print > 0.5:
-        #   print(mic.get_volume())
-        #    last_print = time.monotonic()
+    ##### TODO: add functions to the main loop to sample microphone data and display the vu_meter animation

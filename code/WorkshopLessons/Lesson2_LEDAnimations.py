@@ -17,17 +17,4 @@ pixel_num = 20
 # Create the pixel array
 pixels = neopixel.NeoPixel(pixel_pin, pixel_num, brightness=0.5, auto_write=False)
 
-# Create the animation. Speed parameter is time between animation frames
-comet = Comet(pixels, speed=0.05, color=(0,255,0), tail_length=6, bounce=True)
-chase = Chase(pixels, speed=0.1, color=(255,0,0), size = 3, spacing = 2, reverse=False)
-
-# Call animate to generate animations. LED animations library takes care of timing
-while True:
-
-    # Calling animate() on the animation object updates and displays
-    # the animation, taking care of the timing without blocking so that
-    # other functionality can be called in the main code loop
-    
-    # uncomment one of the animations below to see it
-    #chase.animate() 
-    comet.animate()
+##### TODO: Add code here to display animations from the Adafruit led_animation library

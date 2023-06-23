@@ -26,48 +26,14 @@ class RandomPixel(Animation):
         color=(255,0,0),
         name=None
         ):
-        # Initialize the base class
-        super().__init__(pixel_object, speed, color=color, name=name)
-        self.prob = prob 
-        self.reset()
-    
-    def reset(self):
-        self.pixel_object.fill(BLACK)
-    
-    # Define this simple function so we can override it in a child class
-    def _pixel_color(self): 
-        return self.color
-        
-    # Override the draw function to create the
-    def draw(self):
-        for i, pixel in enumerate(self.pixel_object):
-            if pixel == BLACK:
-                if random.random() < self.prob:  # Pixel will flip if random value in [0,1] < prob
-                    # We set the pixel color using a member function so that we can change
-                    # the way the colors are chosen in a child class
-                    self.pixel_object[i] = self._pixel_color()
-            else:
-                pixel = calculate_intensity(pixel, 0.95)         # Slightly dim each illuminated pixel
-                if (pixel[0] + pixel[1] + pixel[2])/3 < 15:      # Below a certain threhold turn it off
-                    pixel = BLACK
-                self.pixel_object[i] = pixel
-                
-class RandomRainbowPixel(RandomPixel):
-    def __init__(
-        self,
-        pixel_object,
-        speed=0.05,   #Frame rate
-        prob=0.005,   #Probability of pixel lighting up with each call
-        color=(255,0,0),
-        name=None
-        ):
-        # Initialize the base class
-        super().__init__(pixel_object, speed=speed, prob = prob, color=color, name=name)
-        
-    def _pixel_color(self):
-        return random.choice(RAINBOW)
-    
-                
+       ###### TODO: finish the __init__ function
+
+       ###### TODO: override the draw() function to create the animation
+       
+       
+##### TODO: Create a RandomRainbowPixel class that inherits from the RandomPixel
+##### animation but displays random pixels in rainbow colors rather than a single color
+  
             
 # For testing the class
 if __name__ == "__main__":

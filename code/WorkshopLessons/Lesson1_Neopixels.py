@@ -13,20 +13,4 @@ pixel_num = 20
 # Create the pixel array
 pixels = neopixel.NeoPixel(pixel_pin, pixel_num, brightness=0.5, auto_write=False)
 
-# Colors are  represented as RGB tuples
-BLACK = (0,0,0)
-RED = (255,0,0)
-
-#Change pixel colors in the while loop. Don't forget to call "show()"
-while True:
-    n = pixel_num//2
-    pixels[0::2] = [RED]*n      # Use a python slice to color alternate pixels red (R,G,B)
-    pixels[1::2] = [BLACK]*n    # This slice colors the remaining pixels black
-    pixels.show()               # Must call show() to see changes
-    time.sleep(0.2)
-    
-    pixels[0::2] = [BLACK]*n    # Reverse the pattern
-    pixels[1::2] = [RED]*n
-    pixels.show()
-    time.sleep(0.2)
-    
+###### TODO: Add code here to change and display the pixel colors
