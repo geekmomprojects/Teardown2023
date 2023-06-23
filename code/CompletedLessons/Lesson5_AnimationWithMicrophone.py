@@ -46,7 +46,7 @@ if __name__ == "__main__":
     pixels = neopixel.NeoPixel(pixel_pin, pixel_num, brightness=0.5, auto_write=False)
     
     # Mic pin attached here
-    mic_pin = board.IO4
+    mic_pin = eval("board." + os.getenv('MIC_ADC_PIN'))
     mic = AnalogMIC(mic_pin, noise=13, nsamples = 120)
     
     vu_meter = VU_meter(pixels, mic, speed=0.01)

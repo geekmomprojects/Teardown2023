@@ -34,6 +34,11 @@ is open in the controller pane.
 
 If you receive a lanyard kit to use at the workshop, [instructions for assembly are here](/lanyard/README.md)
 
+###Attaching the Microphone
+The wires on the microphone attach to the 3.3V (red), GND (green) and IO4 (yellow) pins in the female header on the T-OI board.
+Unfortunately, the hookup wire I used is a bit thin, so you may have to tape the wires in place to get them to stay.
+![Microphone wires attached to the T-OI Headers](./images/MicAttached.jpg)
+
 ## Resources
 
 - [Adafruit Introduction to CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython/overview)
