@@ -1,3 +1,10 @@
+# Demo code.py for Teardown 2023 workshop: LED Animations with CircuitPython
+# This code demonstrates how the AnimationSequence class allows you to set colors
+# for all animations in the sequence with a single call. Colors come from the
+# Cheerlights server - that publishes a color feed available through HTTP and MQTT
+# to create a global interconnected color network. See CheerLights.com for more info.
+# The MQTT protocol is far more lightweight than HTTP and is fast enough to integrate
+# into web-connected led animations without large disruptions in timing.
 import neopixel
 import board
 import time
@@ -40,12 +47,13 @@ mqtt_topic = "cheerlights"
 
 
 # Define callback methods which are called when events occur
-# TBD - Credit this code to Adafruit MQTT demo
+# Code Adapted from Adafruit MiniMQTT example at
+
+# https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT/blob/main/examples/cpython/minimqtt_simpletest_cpython.py
 def connected(client, userdata, flags, rc):
     # This function will be called when the client is connected
     # successfully to the broker.
     print("Connected to Cheerlights!")
-
 
 def disconnected(client, userdata, rc):
     # This method is called when the client is disconnected
@@ -55,11 +63,9 @@ def subscribe(mqtt_client, userdata, topic, granted_qos):
     # This method is called when the mqtt_client subscribes to a new feed.
     print("Subscribed to {0} with QOS level {1}".format(mqtt_topic, granted_qos))
     
-def unsubscribe(mqtt_client, userdata, topic, pid):
-    # This method is called when the mqtt_client unsubscribes from a feed.
-    print("Unsubscribed from {0} with PID {1}".format(mqtt_topic, pid))
 
-# TBD credit this code to author
+# Cheerlights name to color code adapted from article by Les Pounder at
+# https://www.tomshardware.com/how-to/raspberry-pi-pico-w-control-rgb-lights
 def name_to_color(color):
    colors = {"red":(255,0,0),
              "green":(0,255,0),
@@ -109,8 +115,6 @@ mqtt_client.connect()
 print("Subscribing to %s" % mqtt_topic)
 mqtt_client.subscribe(mqtt_topic)
 
-#print("Disconnecting from %s" % mqtt_client.broker)
-#mqtt_client.disconnect()
 
 while True:
     # Poll the message queue

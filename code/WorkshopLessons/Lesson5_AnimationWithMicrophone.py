@@ -1,4 +1,9 @@
 # Demo code.py for Teardown 2023 workshop: LED Animations with CircuitPython
+# Lesson 5 creates an animation that responds to input from the microphone by
+# displaying VU meter-like light columns on both sides of the lanyard. This 
+# animation uses a microphone class found in /lib/mic.py for collecting data
+# from an analog microphone and averaging it over time. 
+
 from adafruit_led_animation.animation import Animation # Base class for the animation we'll create
 from mic import AnalogMIC                              # Class to read and average input from MAX4466 microphone
 
