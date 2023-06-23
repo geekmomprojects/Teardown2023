@@ -11,7 +11,7 @@ from adafruit_led_animation.animation.chase import Chase
 
 
 # Update to match the pin connected to your NeoPixels
-pixel_pin = board.eval("board." + os.getenv('LED_DATA_PIN'))
+pixel_pin = eval("board." + os.getenv('LED_DATA_PIN'))
 # Update to match the number of NeoPixels you have connected
 pixel_num = 20
 # Create the pixel array
