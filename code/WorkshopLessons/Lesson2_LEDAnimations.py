@@ -1,6 +1,8 @@
 # Demo code.py for Teardown 2023 workshop: LED Animations with CircuitPython
 # Lesson 2 demonstrates how to create and display animations from the
 # animation classes in the adafruit_led_animation library
+# A nice tutorial showing many of the available animations is at Adafruit:
+# https://learn.adafruit.com/circuitpython-led-animations
 import neopixel
 import board
 import os
